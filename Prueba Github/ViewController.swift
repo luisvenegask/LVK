@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //mofif de prueba
+    
+    var a = 45
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
