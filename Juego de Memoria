@@ -1,0 +1,28 @@
+//: JUEGO DE MEMORIA / LUIS VENEGAS
+
+
+import UIKit
+
+/*
+ Reglas:
+ si es divisible entre 5 imprime #BINGO!!!
+ si es par imprime #PAR
+ si es impar imprime #IMPAR
+ si esta entre 30 y 40 imprime #Viva Swift!!!
+ */
+
+var serie = 1..<101
+
+var num = 1
+
+for num in serie {
+
+    if num >= 30 && num <= 40 {
+        print("\(num) Viva Swift")
+    } else if num % 5 == 0 {
+    print("\(num) BINGO!!!")
+    } else if num % 2 == 0 {
+    print("\(num) Par")
+    } else {
+    print("\(num) Impar")}
+}
