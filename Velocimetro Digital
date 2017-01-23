@@ -1,0 +1,52 @@
+//: VELOCIMETRO AUTOMOVIL DIGITAL
+
+import UIKit
+
+enum Velocidades : Int {
+
+    case Apagado = 0, VelocidadBaja = 20, VelocidadMedia = 50, VelocidadAlta = 120
+
+    init (velocidadInicial : Velocidades) {
+        self = velocidadInicial
+    }
+}
+
+class Auto {
+
+    var velocidad = Velocidades(velocidadInicial: .Apagado)
+    
+    init (velocidadUno : Velocidades) {
+        self.velocidad = velocidadUno
+    }
+    
+    func cambioDeVelocidad () -> (actual: Int, velocidadEnCadena: String){
+    
+        var indicador : String
+        
+        switch self.velocidad {
+        
+        case Velocidades.Apagado:
+            self.velocidad = .VelocidadBaja
+            indicador = "Velocidad Baja"
+        case Velocidades.VelocidadBaja:
+            self.velocidad = .VelocidadMedia
+            indicador = "Velocidad Media"
+        case Velocidades.VelocidadMedia:
+            self.velocidad = .VelocidadAlta
+            indicador = "Velocidad Alta"
+        case Velocidades.VelocidadAlta:
+            self.velocidad = .Apagado
+            indicador = "Apagado"
+        }
+        
+        return (self.velocidad.rawValue, indicador)
+    }
+    
+}
+
+var auto = Auto (velocidadUno: .Apagado)
+
+for vel in 1...20 {
+
+    print(auto.cambioDeVelocidad())
+}
